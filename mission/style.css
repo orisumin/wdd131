@@ -1,11 +1,29 @@
 body{
+    width: 500px;    
+    padding: 40px 10%;
+    margin: 0 auto;
+    border: 1px solid rgb(205, 205, 205);
+}
+h1{
     text-align: center;
-    margin: 20px 30%;
 }
 hr{
-    
-    border: 1px solid rgb(85, 134, 207);
+    border: 0;
+    border-top: 1px solid rgb(205, 205, 205);
 }
 #name{
     color: rgb(85, 134, 207);
+    text-align: center;
+}
+img{
+    display: block;
+    padding: 30px;
+    width: 100px;
+    margin: 0 auto;
+}
+li{
+    padding: 5px;
+}
+p, ol{
+    line-height: 1.5;
 }
