@@ -33,6 +33,33 @@
             </ul>
         </div>
     </div>
-                    
+        
+    <label for="webdevlist">Choose One:</label>
+    <select name="code" id="webdevlist">
+        <option>Choose One:</option>
+        <option value="html">HTML</option>
+        <option value="css">CSS</option>
+        <option value="js">JavaScript</option>
+    </select>                   
+        <script>
+                
+        let selectElem = document.getElementById('webdevlist');
+        selectElem.addEventListener('change', function(){
+            let codeValue = selectElem.value;
+            console.log(codeValue);
+        })
+
+        const firstList = document.querySelector(".list");
+        firstList.style.backgroundColor = "red";
+        let content = document.getElementById("content");
+
+        document.querySelector("img").setAttribute("src","portrait.png");
+        document.querySelector("img").setAttribute("alt","new alt tag");
+
+        document.querySelector("h1").textContent = "new h1"
+        
+        console.log(document.getElementById("content"));
+
+    </script>                            
 </body>
 </html>

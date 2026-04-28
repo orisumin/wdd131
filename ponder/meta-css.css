@@ -21,6 +21,7 @@
             list-style: none;
             text-align: left;
             padding-left: 0;
+            background-color: rgb(154, 154, 255);
         }
         #topics{
             width: 320px;
