@@ -7,6 +7,13 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    
+<select>
+    <option>Choose Mode</option>
+    <option value="dark">Dark</option>
+    <option value="light">Light</option>
+</select>              
+                    
     <h1>
         MISSION STATEMENT
     </h1>
@@ -24,5 +31,26 @@
         <li>Delivering education that is affordable for students and the Church.</li>
     </ol>
     <img src="byui-logo-blue.png">
+    <script>
+        let dropdown = document.querySelector("select");
+        let logo = document.querySelector("img");
+        let body = document.querySelector("body");
+
+        dropdown.addEventListener("change", themeChange);
+        
+        function themeChange(){
+            let option = dropdown.value;
+            if (option == "dark"){
+                logo.setAttribute('src','byui-logo-black.png');
+                body.style.backgroundColor = "black";
+                body.style.color = "white";
+            }
+            else{
+                logo.setAttribute('src','byui-logo-blue.png');
+                body.style.backgroundColor = "white";
+                body.style.color = "black";
+            }
+        }
+    </script>
 </body>
 </html>
