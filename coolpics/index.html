@@ -3,17 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Garyeong Bae">
+    <meta name="description" content="coolpics">
     <title>Document</title>
     <link href="coolpics.css" rel="stylesheet">
+    <script src="coolpics.js" defer></script>
 </head>
 <body>
     <div id="heading">
         <h1>Cool Pics📷</h1>
         <p id="menu">Menu</p>
         <nav>
-            <ul>
+            <ul class="hide">
                 <li><a href="#">Home</a></li>
-                <li><a href="#">Home</a></li>
+                <li><a href="#">People</a></li>
                 <li><a href="#">Places</a></li>
                 <li><a href="#">About</a></li>
                 <li><a href="#">Contact</a></li>
@@ -33,6 +36,10 @@
         <img src="norris-sm.jpg">
         <img src="norris-sm.jpg">
     </div>
+    <dialog>
+        <img class="fullimg">
+        <button class="close">X</button>
+    </dialog>
     <footer>
         &copy; 2026 This is the footer
     </footer>

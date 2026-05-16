@@ -11,8 +11,7 @@ function openModal(anyevent) {
     
 // Code to show modal  - Use event parameter 'e'   
     console.log(anyevent.target.src);
-    modalImage.src = anyevent.target.src;
-    modalImage.src.replace('sm','full');
+    modalImage.src = anyevent.target.src.replace('sm', 'full');
     modal.showModal();
 }
 // Close modal on button click
