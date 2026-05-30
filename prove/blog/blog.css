@@ -47,6 +47,10 @@ article p{
     font-family: Arial, Helvetica, sans-serif;
     text-align: left;
 }
+.gap{
+    height: 30px;
+    grid-row: 3;
+    }
 footer p{
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -62,5 +66,6 @@ footer p{
         grid-column: 1/2;
         border-right: 2px solid rgb(255, 179, 39);
     }
+
 
 }
