@@ -52,12 +52,14 @@ form button{
     justify-self: center;
     margin: 0 auto;
 }
+
 .tag{
+    display: inline-block;
     border: 1px solid gray;
     border-radius: 2px;
-    padding: 3px;
-    width: 55px;
+    padding: 3px 8px;
     background-color: rgb(236, 236, 231);
+    margin: 0 6px 6px 0;
 }
 .description{
     padding: 15px;
