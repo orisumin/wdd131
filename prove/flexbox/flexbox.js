@@ -334,7 +334,7 @@ function display(recipes){
     <img src="${recipe.image}" alt="food image">
         <div class="description">
             ${tagGenerator(recipe.tags)}
-            <h2>${recipe.name}</h2>
+            <h2>${recipe.name.toUpperCase()}</h2>
             <span class="rating" role="img" aria-label="Rating: ${recipe.rating} out of 5 stars">
             ${ratingGenerator(recipe.rating)}
             </span>
