@@ -351,4 +351,3 @@ function sortByName(a,b){
     }
     return 0;
 }
-function 
