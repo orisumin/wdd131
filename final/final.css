@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=Luckiest+Guy&family=Moirai+One&display=swap');
+
+body{
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+    font-family: "IBM Plex Sans", Helvetica, sans-serif;
+    background-color: #4816ab;
+
+}
+main{
+    width: 100%;
+}
+header{
+    position:fixed;
+    top: 0px;
+    left: 0px;
+    background-color: hsl(260, 77%, 38%, 70%);
+    width: 100%;
+
+}
+#logo{
+    width: 80px;
+}
+#banner{
+    background-color: black;
+}
+#bannerImg{
+    margin-top: 50px;
+    width: 100%;
+    max-width: 700px;
+}
+h1{
+    font-family: Audiowide,"Luckiest Guy";
+    color: #fff585;
+}
+#search{
+    background-color: #d3ceff;
+    padding-top: 10px;
+    
+}
+#search form{
+    background-color: white;
+    border-radius: 20px;
+    border: 2px solid #bbb3ff;
+    width: 80%;
+    display: flex;
+    justify-self: center;
+    align-content: center;
+}
+#searchBar{
+    width: 85%;
+    padding: 5px;
+    border-style: none;
+    border-radius: 20px;
+}
+#searchBar:focus{
+    outline: none;
+}
+#searchBar::placeholder{
+    color: #bfbbdf;
+    font-size: 15px;
+}
+#searchBtn{
+    background-color: transparent;
+    border-color: transparent;
+    border-radius:15px;
+    padding-top: 3px;
+    margin: 2px;
+}
+#searchBtn:hover{
+    background-color: #efedff;
+}
+#magnifier{
+    width: 20px;
+    filter: invert(30%) sepia(93%) saturate(200%) hue-rotate(230deg) brightness(119%) contrast(180%);
+}
+#filters{
+    width: 100%;
+    background-color: #d3ceff;
+    display: flex;
+    justify-content: center;
+    font-size: 17px;
+    color: #4816ab;
+    border-radius: 0px 0px 10px 10px;
+    padding: 20px 0px 20px 0px;
+    margin-top: -25px;
+}
+#filters form{
+    width: 100%;
+    padding-left: 20px;
+}
+#dropdown-container{
+    background-color: #d3ceff;
+    padding: 10px 0px;
+    border-radius: 0px 0px 20px 20px;
+}
+#dropdownBtn{
+    background-color: transparent;
+    border-style: none;
+    border-radius: 10px;
+    width: 100px;
+    height: 30px;
+    color: #4816ab;
+    font-family: "IBM Plex Sans", Helvetica, sans-serif;
+    background-color: #c5beff;
+
+}
+#dropdownBtn:hover{
+    background-color: #b5aef5;
+}
+#types{
+    width: 80%;
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.checksets{
+    display: flex;
+    padding: 3px;
+    border-radius: 10px;
+}
+.checksets label{
+    margin-top: 3px;
+}
+.checksets:hover{
+    background-color: #c5beff;
+}
+.checksets label img{
+    width: 20px;
+    margin-bottom: -4px;
+}
+input[type="checkbox"]{
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+.apply{
+    width: 60px;
+    background-color: #4816ab;
+    color: #70faff;
+    border-color: transparent;
+    border-radius: 10px;
+    padding: 3px;
+    padding-bottom: 5px;
+    font-family: "IBM Plex Sans", Helvetica, sans-serif;
+    font-size: 16px;
+}
+.apply:hover{
+    background-color: #fff585;
+    color: #4816ab;
+}
+#cards-container{
+    display: flex;
+    flex-direction: column;
+}
+footer{
+    color: #fff585;
+    margin-top: 70px;
+}
+@media screen and (min-width:700px) {
+    #search{
+        width: 90%;
+        max-width: 800px;
+        padding: 5px;
+        margin: 30px auto;
+        background-color: transparent;
+    }
+    #search form{
+        border-color: #70faff;
+    }
+    .checksets{
+        margin: 1px;
+    }
+    #filters{
+        width: 30%;
+        max-width: 200px;
+        border-radius: 20px;
+        margin: 10px;
+    }
+    #types{
+        display: flex;
+        flex-direction: column;
+        margin-left: 0px;
+    }
+    .apply{
+        margin-right: 25px;
+    }
+    #dropdown-container, #dropdownBtn{
+        display: none;
+    }
+    #cards-container{
+        height: inherit;
+    }
+    
+}
+@media screen and (min-width:1100px) {
+    #filters{
+        margin-top: -65px;
+        margin-left: 30px;
+    }
+    #search{
+        margin-top: 50px;
+        margin-left: 30%;
+    }
+}
