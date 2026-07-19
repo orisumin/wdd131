@@ -288,7 +288,7 @@ const pokemons = [
         abiliby: ['Commander']
     },
     {
-        img: 'img/Tinkaton.webp',
+        img: 'img/Tinkatink.webp',
         name: "Tinkatink",
         type: ['fairy','steel'],
         category: "Metalsmith Pokémon",

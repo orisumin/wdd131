@@ -264,7 +264,7 @@ footer{
     .card{
         width: 60%;
         height: 200px;
-        max-width: 250px;
+        max-width: 300px;
     }
     .card .pokemon{
         width: 100px;
