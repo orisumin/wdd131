@@ -83,7 +83,7 @@ const pokemons = [
     {
         img: 'img/Flamigo.webp',
         name: "Flamigo",
-        type: ['flying','fighting'],
+        type: ['flying','fight'],
         category: "Synchronize Pokémon",
         height: 1.6,
         weight: 37.0,
