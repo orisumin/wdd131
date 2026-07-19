@@ -343,6 +343,173 @@ const pokemons = [
     }
 ];
 
+const searchBtn = document.querySelector("#searchBtn");
+const filterOpener = document.querySelector("#dropdownBtn");
+
+const filters = document.querySelector("#filters");
+
+const bug = document.querySelector("#elementalType1");
+const dark = document.querySelector("#elementalType2");
+const dragon = document.querySelector("#elementalType3");
+const electric = document.querySelector("#elementalType4");
+const fairy = document.querySelector("#elementalType5");
+const fight = document.querySelector("#elementalType6");
+const fire = document.querySelector("#elementalType7");
+const flying = document.querySelector("#elementalType8");
+const ghost = document.querySelector("#elementalType9");
+const grass = document.querySelector("#elementalType10");
+const ground = document.querySelector("#elementalType11");
+const ice = document.querySelector("#elementalType12");
+const normal = document.querySelector("#elementalType13");
+const poision = document.querySelector("#elementalType14");
+const psychic = document.querySelector("#elementalType15");
+const rock = document.querySelector("#elementalType16");
+const steel = document.querySelector("#elementalType17");
+const water = document.querySelector("#elementalType18");
+const typeList = [bug, dark, dragon, electric, fairy, fight, fire, flying, ghost, grass, ground, ice, normal, poision, psychic, rock, steel, water];
+
+const applyBtn = document.querySelector(".apply");
+const cardsContainer = document.querySelector("#cards-container");
+
+searchBtn.addEventListener('click', (event) => {
+    event.preventDefault();
+    search();
+});
+filterOpener.addEventListener('click',()=>{
+    const ifOpen = filters.hidden == true;
+    filters.hidden = !ifOpen;
+    if (filters.hidden == true){
+        filterOpener.innerHTML =`filters ⮟`;
+    }
+    else{
+        filterOpener.innerHTML =`filters ⮝`;
+    }
+
+});
+applyBtn.addEventListener('click',(event)=>{
+    event.preventDefault();
+    filterByTypes();
+})
+
+
+function search(){
+    const userInput = document.querySelector("#searchBar").value.toLowerCase();
+
+    const searchedList = pokemons.filter(pokemon =>{
+        return pokemon.name.toLocaleLowerCase().includes(userInput) 
+        || pokemon.category.toLocaleLowerCase().includes(userInput)
+        || pokemon.abiliby.join(" ").toLocaleLowerCase().includes(userInput);
+    });
+
+    const sortedList = searchedList.sort(sortByName);
+    displayCards(sortedList);
+}
+function filterByTypes(){
+    const userInput = document.querySelector("#searchBar").value.toLowerCase();
+    const checkedTypes = typeList.filter(type =>type.checked).map(type => type.value.toLocaleLowerCase());
+
+    const searchedList = pokemons.filter(pokemon =>{
+        return pokemon.name.toLocaleLowerCase().includes(userInput) 
+        || pokemon.category.toLocaleLowerCase().includes(userInput)
+        || pokemon.abiliby.join(" ").toLocaleLowerCase().includes(userInput);
+    });
+    const filteredList = searchedList.filter(pokemon => {
+    if (checkedTypes.length === 0) {
+        return true;
+    }
+
+    return pokemon.type.some(type => checkedTypes.includes(type.toLowerCase()));
+});
+
+    const sortedList = filteredList.sort(sortByName);
+    displayCards(sortedList);
+}
+function displayType(typelist){
+    let typeString = ``;
+    typelist.forEach(type => {
+        typeString +=
+        `<div class="PKMtype">
+            <p style="color: ${getTypeColorCode(type)};"><b>${type.toUpperCase()}</b> 
+            </p>
+            <img src="img/${type}.png">
+        </div>`;
+    });
+    return typeString;
+}
+function getTypeColorCode(typeName){
+    switch (typeName){
+        case "bug":
+            return `#6ba001`;
+        case "dark":
+            return `#ffffff`;
+        case "dragon":
+            return `#006cc5`;
+        case "electric":
+            return `#c7a200`;
+        case "fairy":
+            return `#d43dca`;
+        case "fight":
+            return `#cf3e69`;
+        case "fire":
+            return `#fe7e22`;
+        case "flying":
+            return `#5572b0`;
+        case "ghost":
+            return `#5268ac`;
+        case "grass":
+            return `#1c940e`;
+        case "ground":
+            return `#da7744`;
+        case "ice":
+            return `#249383`;
+        case "normal":
+            return `#ffffff`;
+        case "poison":
+            return `#ab6ac9`;
+        case "psychic":
+            return `#d25256`;
+        case "rock":
+            return `#877b57`;
+        case "steel":
+            return `#437385`;
+        case "water":
+            return `#4086d1`;
+        default:
+            return `#ffffff`;
+    }
+}
+function displayAbility(list){
+    let abilityString = ``;
+    list.forEach(ability => {
+        if(ability != list[list.length -1]){
+            abilityString += `${ability}, `; 
+        }else{
+            abilityString += `${ability}`;
+        }
+    });
+    return abilityString;
+}
+function displayCards(list){
+    cardsContainer.innerHTML = ``;
+    list.forEach(pokemon => {
+        cardsContainer.innerHTML += 
+        `<div class="card">
+                <div class="img-part">
+                    <img src="img/${pokemon.name}.webp" alt="${pokemon.name} image" class="pokemon"> 
+                    ${displayType(pokemon.type)}
+                </div>
+
+                <div class="description">
+                    <p class="name">${pokemon.name}</p>
+                    <p class="category">${pokemon.category}</p>
+                    <p>Height: ${pokemon.height}m
+                    <br>Weight: ${pokemon.weight}kg
+                    <br>Ability: ${displayAbility(pokemon.abiliby)}
+                    </p>
+                </div>
+        </div>`;
+    });
+}
 function sortByName(a,b){
     if (a.name > b.name){
         return 1;
